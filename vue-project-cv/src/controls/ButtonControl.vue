@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, type PropType } from 'vue';
+import { type PropType } from 'vue';
 
 defineProps({
   text: { type: String, default: '' },

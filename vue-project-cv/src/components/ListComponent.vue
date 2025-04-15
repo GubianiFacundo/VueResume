@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts" generic="T">
-import { defineProps } from 'vue';
 
 defineProps<{
   items: T[];

@@ -9,7 +9,7 @@ import type { Project } from "@/types/project";
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const { t, locale } = useI18n();
+const { locale } = useI18n();
 
 const props = defineProps<{
   project: Project;
