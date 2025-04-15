@@ -5,18 +5,18 @@
     </template>
 
     <template #content>
-      <div class="about-container">
+      <div class="about-container boxGeneral">
         <section class="about-me-section">
           <h1 class="section-title">{{ t('about.title') }}</h1>
           <h2 class="about-me-text">{{ t('about.description') }}</h2>
           <h3 class="about-me-text">{{ t('about.subtitle') }}</h3>
         </section>
 
-        <InfoSection class="background-section" :title="t('about.background')" :items="background" />
+        <InfoSection class="background-section boxSection" :title="t('about.background')" :items="background" />
 
-        <InfoSection class="experience-section" :title="t('about.experience')" :items="jobs" />
+        <InfoSection class="experience-section boxSection" :title="t('about.experience')" :items="jobs" />
 
-        <InfoSection class="degrees-section" :title="t('about.degrees')" :items="degrees" />
+        <InfoSection class="degrees-section boxSection" :title="t('about.degrees')" :items="degrees" />
 
         <NavigationGuide :text="t('home.navGuide')" :buttonText="t('about.skills')" routeName="Skills"
           class="navigation" />
@@ -31,15 +31,15 @@
 import BasicScreenView from '@/views/BasicScreenView.vue';
 import { useI18n } from 'vue-i18n';
 import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
 import InfoSection from '@/components/InfoSection.vue';
 import NavigationGuide from '@/components/NavigationGuide.vue';
 import { type Resource } from '@/types/resource';
 import resourceService from '@/service/services/resourceService';
 import { CategoryType } from '@/types/resource';
 
+// TODO: add button resume.pdf
+
 const { t } = useI18n();
-const route = useRoute();
 
 const resources = ref<Resource[]>([]);
 
@@ -64,8 +64,6 @@ onMounted(async () => {
   grid-template-rows: auto auto auto;
   gap: 2rem;
   padding: 0.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(64, 64, 64, 0.3);
   grid-template-areas:
     "about-me about-me about-me"
     "background-section experience degrees"
@@ -104,28 +102,6 @@ onMounted(async () => {
 .navigation {
   grid-area: navigation;
   text-align: center;
-}
-
-.background-section,
-.experience-section,
-.degrees-section {
-  background-color: #a8a176;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.experience-list,
-.degrees-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.experience-list li,
-.degrees-list li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
 }
 
 .about-title {

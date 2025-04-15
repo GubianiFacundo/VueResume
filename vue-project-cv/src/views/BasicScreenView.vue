@@ -69,13 +69,6 @@ const devGithub = "https://github.com/GubianiFacundo";
   margin-top: 1rem;
 }
 
-.footer a {
-  background-color: transparent;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
 .italicName {
   font-style: italic;
   font-size: large;
@@ -91,13 +84,10 @@ const devGithub = "https://github.com/GubianiFacundo";
 
 .social-icon {
   font-size: 24px;
-  color: #0077b5;
   transition: color 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
 }
 
 .social-icon:hover {
-  color: #005582; /* Darker LinkedIn color on hover */
   transform: scale(1.1);
 }
 

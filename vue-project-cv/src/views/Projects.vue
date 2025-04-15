@@ -1,12 +1,12 @@
 <template>
   <BasicScreenView>
     <template #content>
-      <div class="projects-container">
+      <div class="projects-container boxGeneral">
         <h2 class="projects-title">{{ t("projects.title") }}</h2>
         <div class="projects-list">
           <projectComponent v-for="project in projects" :key="project.id" :project="project">
             <template #default="{ project }">
-              <div class="project-item">
+              <div class="boxSection">
                 <h3 class="project-name">{{ project.name }}</h3>
                 <p class="project-description">{{ project.description }}</p>
                 <p class="project-data">{{ project.data }}</p>
@@ -30,7 +30,9 @@ import projectComponent from '@/components/Project.vue';
 import BasicScreenView from '@/views/BasicScreenView.vue';
 import NavigationGuide from '@/components/NavigationGuide.vue';
 
-const { t, locale } = useI18n();
+// TODO: Add missing projects, migration
+
+const { t } = useI18n();
 
 const projects = ref<Array<Project>>([]);
 
@@ -49,8 +51,6 @@ fetchProjects();
 <style lang="scss">
 .projects-container {
   padding: 0.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(64, 64, 64, 0.3);
 }
 
 .projects-title {
@@ -64,19 +64,6 @@ fetchProjects();
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-}
-
-.project-item {
-  padding: 1.5rem;
-  background-color: #a8a176;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.project-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .project-name {

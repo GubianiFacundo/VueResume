@@ -28,7 +28,6 @@
 
 <script setup lang="ts">
 import type { Resource } from "@/types/resource";
-import { defineProps } from "vue";
 import { CategoryType } from '@/types/resource';
 import { formatDate } from "@/utils/formatter";
 
@@ -77,17 +76,6 @@ li {
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
-}
-
-a {
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-  background-color: transparent;
 }
 
 p {

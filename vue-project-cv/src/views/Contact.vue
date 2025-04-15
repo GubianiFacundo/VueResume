@@ -4,27 +4,27 @@
     </template>
 
     <template #content>
-      <div class="contact-container">
+      <div class="contact-container boxGeneral">
         <section class="contact-header">
           <h1 class="section-title">{{ t('contact.title') }}</h1>
           <p class="contact-description">{{ t('contact.description') }}</p>
         </section>
 
         <div class="contact-methods">
-          <div class="contact-box">
+          <div class="contact-box boxSection">
             <h2 class="social-icon"><v-icon>mdi-email</v-icon>{{ t('contact.email') }}</h2>
             <p>
               <a :href="'mailto:' + devEmail">{{ devEmail }}</a>
             </p>
           </div>
-          <div class="contact-box">
+          <div class="contact-box boxSection">
             <h2 class="social-icon"><v-icon>mdi-linkedin</v-icon>{{ t('contact.linkedin') }} </h2>
             
             <p>
               <a :href="devLinkedin" target="_blank">{{ devName }}</a>
             </p>
           </div>
-          <div class="contact-box">
+          <div class="contact-box boxSection">
             <h2 class="social-icon"><v-icon>mdi-github</v-icon>{{ t('contact.github') }}</h2>
             <p>
               <a :href="devGithub" target="_blank">{{ devName }}</a>
@@ -58,8 +58,6 @@ const devGithub = 'https://github.com/GubianiFacundo';
   grid-template-columns: 1fr;
   gap: 2rem;
   padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(64, 64, 64, 0.3);
 }
 
 .contact-header {
@@ -83,14 +81,10 @@ const devGithub = 'https://github.com/GubianiFacundo';
 }
 
 .contact-box {
-  background-color: #a8a176;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -106,17 +100,6 @@ const devGithub = 'https://github.com/GubianiFacundo';
 .contact-box p {
   font-size: 1rem;
   margin: 0;
-}
-
-a {
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-  background-color: transparent;
 }
 
 .social-icon {

@@ -2,7 +2,7 @@
   <BasicScreenView>
     <template #header>
       <div class="banner-container">
-        <div class="banner">
+        <div class="banner boxGeneral">
           <img :src="banner" alt="Banner" class="banner-image" />
         </div>
       </div>
@@ -24,20 +24,14 @@
 
 <script setup lang="ts">
 import BasicScreenView from '@/views/BasicScreenView.vue';
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import BannerCV from '@/public/BannerCv2.png';
-import router from '@/router/router';
 import NavigationGuide from '@/components/NavigationGuide.vue';
 
-const { t, locale } = useI18n();
+const { t } = useI18n();
 
 const banner = ref(BannerCV);
-
-
-const goToAbout = () => {
-  router.push({ name: 'About' });
-};
 
 </script>
 
@@ -51,14 +45,14 @@ const goToAbout = () => {
 .banner {
   width: 100%;
   height: auto;
-  box-shadow: 0 4px 8px rgba(71, 64, 64, 0.2);
-  border-radius: 8px;
+  
 }
 
 .banner-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .separator {

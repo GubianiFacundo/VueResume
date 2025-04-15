@@ -36,16 +36,45 @@ body {
   grid-area: sidebar;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
   padding: 3px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+a:hover {
+  text-decoration: underline;
+  color: #005582;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.boxGeneral {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(64, 64, 64, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.boxGeneral:hover {
+  box-shadow: 0 8px 16px rgba(64, 64, 64, 0.5);
+}
+
+.boxSection {
+  background-color: #a8a176;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.boxSection:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
