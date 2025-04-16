@@ -37,9 +37,9 @@ Thanks for stopping by — feel free to explore and reach out if you'd like to c
     subtitle: `
     I consider myself a seasoned software developer with over 5+ years of experience in designing scalable and maintainable solutions. My strong commitment to code quality and collaborative development is demonstrated through consistent use of version control systems, enabling streamlined collaboration and efficient code management.
 With a proven track record in the healthcare, ERP, and financial sectors, I bring a diverse and robust skill set to every project. My experience positions me as a versatile professional, well-equipped to tackle complex technical challenges and deliver high-quality, reliable software solutions.`,
-background: 'Background',
-experience: 'Experience',
-degrees: 'Degrees',
+background: 'Academic Background',
+experience: 'Work Experience',
+degrees: 'Certificates / Courses / Degrees',
   },
   projects: {
     title: 'My Projects',
