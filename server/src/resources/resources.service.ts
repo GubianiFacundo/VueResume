@@ -10,7 +10,7 @@ export class ResourcesService {
     private readonly resourceRepository: Repository<Resource>,
   ) { }
 
-  async getAllResource(): Promise<Resource[]> {
+  async getAllResources(): Promise<Resource[]> {
     return await this.resourceRepository.find();
   }
 }

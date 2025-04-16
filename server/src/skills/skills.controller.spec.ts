@@ -47,14 +47,14 @@ describe('SkillsController', () => {
   });
 
   describe('getAllSkills', () => {
-    it('should return an array of skills (happy path)', async () => {
+    it('should return an array of skills', async () => {
       mockSkillsService.getAllSkills.mockResolvedValue([mockSkill]);
       const result = await controller.getAllSkills();
       expect(result).toEqual([mockSkill]);
       expect(mockSkillsService.getAllSkills).toHaveBeenCalledTimes(1);
     });
 
-    it('should throw an error if fetching skills fails (error path)', async () => {
+    it('should throw an error if fetching skills fails', async () => {
       mockSkillsService.getAllSkills.mockRejectedValue(new Error('Database error'));
       await expect(controller.getAllSkills()).rejects.toThrow('Database error');
       expect(mockSkillsService.getAllSkills).toHaveBeenCalledTimes(1);
@@ -62,14 +62,14 @@ describe('SkillsController', () => {
   });
 
   describe('findOne', () => {
-    it('should return a skill if found (happy path)', async () => {
+    it('should return a skill if found', async () => {
       mockSkillsService.findOne.mockResolvedValue(mockSkill);
       const result = await controller.findOne(1);
       expect(result).toEqual(mockSkill);
       expect(mockSkillsService.findOne).toHaveBeenCalledWith(1);
     });
 
-    it('should throw NotFoundException if skill is not found (error path)', async () => {
+    it('should throw NotFoundException if skill is not found', async () => {
       mockSkillsService.findOne.mockRejectedValue(new NotFoundException('Skill not found'));
       await expect(controller.findOne(1)).rejects.toThrow(NotFoundException);
       expect(mockSkillsService.findOne).toHaveBeenCalledWith(1);
@@ -77,7 +77,7 @@ describe('SkillsController', () => {
   });
 
   describe('create', () => {
-    it('should create and return a new skill (happy path)', async () => {
+    it('should create and return a new skill', async () => {
       const newSkill = { name: 'TypeScript', type: SkillType.PROGRAMMING_LANGUAGES };
       mockSkillsService.create.mockResolvedValue({ id: 2, ...newSkill });
 
@@ -86,7 +86,7 @@ describe('SkillsController', () => {
       expect(mockSkillsService.create).toHaveBeenCalledWith(newSkill);
     });
 
-    it('should throw an error if creating a skill fails (error path)', async () => {
+    it('should throw an error if creating a skill fails', async () => {
       const newSkill = { name: 'TypeScript', type: SkillType.PROGRAMMING_LANGUAGES };
       mockSkillsService.create.mockRejectedValue(new Error('Database error'));
 
@@ -96,7 +96,7 @@ describe('SkillsController', () => {
   });
 
   describe('update', () => {
-    it('should update and return the updated skill (happy path)', async () => {
+    it('should update and return the updated skill', async () => {
       const updatedSkill = { name: 'Updated JavaScript' };
       mockSkillsService.update.mockResolvedValue({ ...mockSkill, ...updatedSkill });
 
@@ -105,7 +105,7 @@ describe('SkillsController', () => {
       expect(mockSkillsService.update).toHaveBeenCalledWith(1, updatedSkill);
     });
 
-    it('should throw NotFoundException if skill is not found (error path)', async () => {
+    it('should throw NotFoundException if skill is not found', async () => {
       const updatedSkill = { name: 'Updated JavaScript' };
       mockSkillsService.update.mockRejectedValue(new NotFoundException('Skill not found'));
 
@@ -115,14 +115,14 @@ describe('SkillsController', () => {
   });
 
   describe('delete', () => {
-    it('should delete the skill if found (happy path)', async () => {
+    it('should delete the skill if found', async () => {
       mockSkillsService.delete.mockResolvedValue(undefined);
       const result = await controller.delete(1);
       expect(result).toBeUndefined();
       expect(mockSkillsService.delete).toHaveBeenCalledWith(1);
     });
 
-    it('should throw NotFoundException if skill is not found (error path)', async () => {
+    it('should throw NotFoundException if skill is not found', async () => {
       mockSkillsService.delete.mockRejectedValue(new NotFoundException('Skill not found'));
       await expect(controller.delete(1)).rejects.toThrow(NotFoundException);
       expect(mockSkillsService.delete).toHaveBeenCalledWith(1);
