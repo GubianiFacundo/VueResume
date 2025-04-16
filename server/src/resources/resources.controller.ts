@@ -20,8 +20,8 @@ export class ResourcesController {
   }
 
   @Get()
-  async getAllresources(): Promise<ResourceDto[]> {
-    const skills = await this.resourcesService.getAllResource();
-    return skills.map(this.mapToResourceDto);
+  async getAllResources(): Promise<ResourceDto[]> {
+    const resources = await this.resourcesService.getAllResources();
+    return resources.map(this.mapToResourceDto);
   }
 }
