@@ -3,7 +3,6 @@ import { ProjectService } from './project.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Project } from './entities/project.entity';
-import { NotFoundException } from '@nestjs/common';
 
 describe('ProjectService', () => {
   let service: ProjectService;

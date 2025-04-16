@@ -18,14 +18,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import ButtonControl from '@/controls/ButtonControl.vue';
 import ListComponent from '@/components/ListComponent.vue';
 import { useSidebarStore } from '@/stores/sidebar';
 import { useI18n } from 'vue-i18n';
 
-const { t, locale } = useI18n();
+const { t } = useI18n();
 
 const sidebarStore = useSidebarStore();
 const isExpanded = computed(() => sidebarStore.isExpanded);

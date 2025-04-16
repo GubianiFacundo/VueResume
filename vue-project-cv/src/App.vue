@@ -1,3 +1,15 @@
+<template>
+  <Sidebar id='main-sidebar' data-testid='sidebar'/>
+  <v-app :class='appClasses' id='main-app'>
+    <v-main>
+      <HeaderBar id='main-headerbar' data-testid='headerbar' />
+      <v-container>
+        <RouterView />
+      </v-container>
+    </v-main>
+  </v-app>
+</template>
+
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
 import Sidebar from '@/components/sidebar/Sidebar.vue';
@@ -33,18 +45,6 @@ watch(
   { immediate: true }
 );
 </script>
-
-<template>
-  <Sidebar id="main-sidebar" />
-  <v-app :class="appClasses" id="main-app">
-    <v-main>
-      <HeaderBar />
-      <v-container>
-        <RouterView />
-      </v-container>
-    </v-main>
-  </v-app>
-</template>
 
 <style scoped>
 </style>
