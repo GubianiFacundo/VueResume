@@ -36,9 +36,9 @@ Mi trayectoria en tecnología ha sido impulsada por la curiosidad y el deseo de 
     subtitle: `Soy un desarrollador de software con más de cinco años de experiencia en la creación de soluciones escalables y mantenibles. Mi compromiso con la calidad del código y el trabajo colaborativo se refleja en el uso constante de sistemas de control de versiones, lo que garantiza una colaboración fluida y una gestión eficiente del código.
 
 Con una trayectoria comprobada en los sectores de salud, ERP y financiero, aporto un conjunto de habilidades sólidas y variadas. Mi experiencia me posiciona como un profesional versátil, capaz de enfrentar desafíos técnicos complejos y ofrecer soluciones de software de alta calidad y fiabilidad.`,
-background: 'Antecedentes',
-experience: 'Experiencia',
-degrees: 'Títulos',  
+background: 'Antecedentes Académicos',
+experience: 'Experiencia Laboral',
+degrees: 'Certificados / Cursos / Títulos',  
 },
   projects: {
     title: 'Mis Proyectos',
