@@ -4,7 +4,7 @@
       <div class="projects-container boxGeneral">
         <h2 class="projects-title">{{ t("projects.title") }}</h2>
         <div class="projects-list">
-          <projectComponent v-for="project in projects" :key="project.id" :project="project">
+          <ProjectComponent class="project-component" v-for="project in projects" :key="project.id" :project="project">
             <template #default="{ project }">
               <div class="boxSection">
                 <h3 class="project-name">{{ project.name }}</h3>
@@ -12,9 +12,9 @@
                 <p class="project-data">{{ project.data }}</p>
               </div>
             </template>
-          </projectComponent>
+          </ProjectComponent>
         </div>
-        <NavigationGuide :text="t('home.navGuide')" :buttonText="t('projects.contact')" routeName="Contact" />
+        <NavigationGuide class="project-navigation" :text="t('home.navGuide')" :buttonText="t('projects.contact')" routeName="Contact" />
       </div>
     </template>
   </BasicScreenView>
@@ -26,7 +26,7 @@ import { ref } from 'vue';
 import projectService from '@/service/services/projectService';
 import type { Project } from '@/types/project';
 import { useI18n } from 'vue-i18n';
-import projectComponent from '@/components/Project.vue';
+import ProjectComponent from '@/components/Project.vue';
 import BasicScreenView from '@/views/BasicScreenView.vue';
 import NavigationGuide from '@/components/NavigationGuide.vue';
 

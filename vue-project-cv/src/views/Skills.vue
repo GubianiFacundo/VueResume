@@ -44,13 +44,22 @@ const { t } = useI18n();
 const skillGroups = ref<{ title: string; skills: Skill[] }[]>([]);
 
 onMounted(async () => {
-  const skills = await skillService.getSkills();
-  const groupedSkills = Object.values(SkillType).map((type) => ({
-    title: type,
-    skills: skills.filter((skill) => skill.type === type),
-  }));
-  skillGroups.value = groupedSkills;
+  await fetchSkills();
 });
+
+const fetchSkills = async () => {
+  try {
+    const skills = await skillService.getSkills();
+    const groupedSkills = Object.values(SkillType).map((type) => ({
+      title: type,
+      skills: skills.filter((skill) => skill.type === type),
+    }));
+    skillGroups.value = groupedSkills;
+  } catch (error) {
+    console.error('Error fetching skills:', error);
+  }
+};
+
 
 </script>
 
