@@ -7,7 +7,7 @@ export enum CategoryType {
 export interface Resource {
   id: number;
   name: string;
-  category: string;
+  category: CategoryType;
   description?: string;
   link?: string;
   fromdate?: Date;
