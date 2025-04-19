@@ -1,11 +1,26 @@
 describe('About Page', () => {
-  beforeEach(() => {
+  const mockBackground = [
+    { id: 1, name: 'Education 1', category: 'Education', description: 'Description 1', fromdate: '2020-01-01', todate: '2022-01-01' },
+  ];
+  const mockJobs = [
+    { id: 2, name: 'Job 1', category: 'Job', description: 'Description 2', fromdate: '2018-01-01', todate: '2020-01-01' },
+  ];
+  const mockDegrees = [
+    { id: 3, name: 'Course 1', category: 'Course', description: 'Description 3', fromdate: '2019-01-01', todate: '2021-01-01' },
+  ];
+
+  const mockResources = [...mockBackground, ...mockJobs, ...mockDegrees];
+
+  beforeEach(() => {  
+    cy.intercept('GET', 'http://localhost:3000/resources', {
+      statusCode: 200,
+      body: mockResources,
+    }).as('getResources');
+
     cy.visit('/about');
   });
 
   it('should load the About page and display all sections', () => {
-    cy.visit('/about');
-
     cy.get('.about-container').should('exist');
 
     cy.get('.about-me-section').should('exist');
@@ -20,9 +35,7 @@ describe('About Page', () => {
   });
 
   it('should render InfoSection components with correct data', () => {
-    cy.intercept('/api/resources').as('getResources');
-
-    cy.reload();
+    cy.wait('@getResources');
 
     cy.get('.background-section').within(() => {
       cy.get('h2').should('contain.text', 'Academic Background');

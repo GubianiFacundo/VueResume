@@ -21,7 +21,8 @@
             </SkillGroup>
           </div>
         </div>
-        <NavigationGuide :text="t('home.navGuide')" :buttonText="t('projects.contact')" routeName="Projects" />
+        <NavigationGuide class="skill-navigation" :text="t('home.navGuide')" :buttonText="t('projects.contact')"
+          routeName="Projects" />
       </div>
     </template>
   </BasicScreenView>
