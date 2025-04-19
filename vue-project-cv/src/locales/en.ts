@@ -32,6 +32,7 @@ Thanks for stopping by — feel free to explore and reach out if you'd like to c
   about: {
     title: 'About Me',
     skills: 'Skills',
+    download: 'Download Resume',
     description: `I'm a software developer with a passion for creating dynamic and interactive applications.
     My journey in tech has been fueled by curiosity and a desire to innovate. I thrive on challenges and love turning ideas into reality through code.`,
     subtitle: `

@@ -31,6 +31,7 @@ Gracias por tu visita. ¡No dudes en explorar y contactarme si quieres conectar!
   about: {
     title: 'Sobre Mí',
     skills: 'Habilidades',
+    download: 'Descargar CV',
     description: `Soy un desarrollador de software con pasión por crear aplicaciones dinámicas e interactivas.
 Mi trayectoria en tecnología ha sido impulsada por la curiosidad y el deseo de innovar. Me encanta enfrentar desafíos y convertir ideas en realidad a través del código.`,
     subtitle: `Soy un desarrollador de software con más de cinco años de experiencia en la creación de soluciones escalables y mantenibles. Mi compromiso con la calidad del código y el trabajo colaborativo se refleja en el uso constante de sistemas de control de versiones, lo que garantiza una colaboración fluida y una gestión eficiente del código.
