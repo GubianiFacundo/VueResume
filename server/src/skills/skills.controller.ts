@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param, Body, NotFoundException } from '@nestjs/common';
 import { SkillsService } from './skills.service';
 import { Skill } from './entities/skill.entity';
 import { SkillDto } from './dto/skill.dto';
@@ -27,6 +27,9 @@ export class SkillsController {
   @Get(':id')
   async findOne(@Param('id') id: number): Promise<SkillDto> {
     const skill = await this.skillsService.findOne(id);
+    if (!skill) {
+      throw new NotFoundException(`Skill with ID ${id} not found`);
+    }
     return this.mapToSkillDto(skill);
   }
 
