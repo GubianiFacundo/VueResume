@@ -30,8 +30,6 @@ import ProjectComponent from '@/components/Project.vue';
 import BasicScreenView from '@/views/BasicScreenView.vue';
 import NavigationGuide from '@/components/NavigationGuide.vue';
 
-// TODO: Add missing projects, migration
-
 const { t } = useI18n();
 
 const projects = ref<Array<Project>>([]);
